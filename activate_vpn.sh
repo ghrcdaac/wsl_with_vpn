@@ -10,7 +10,6 @@ function activate {
     echo '[network]' | sudo tee $wsl
     echo 'generateResolvConf = false' | sudo tee -a $wsl
     ns='nameserver '
-    echo $1
     echo "nameserver $1" | sudo tee $resolv
     chattr +i $resolv
     echo 'VPN configured'
